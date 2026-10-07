@@ -1,0 +1,32 @@
+[
+  {
+    "step": 1,
+    "icon": "search",
+    "title": "비즈니스·시장 진단",
+    "description": "업종, 상권/경쟁사, 현재 노출 상태를 점검합니다."
+  },
+  {
+    "step": 2,
+    "icon": "target",
+    "title": "목표 맞춤 전략 설계",
+    "description": "목표(문의·방문·매출)별 채널·예산 구성을 설계합니다."
+  },
+  {
+    "step": 3,
+    "icon": "pencil",
+    "title": "콘텐츠·소재 제작 및 테스트 집행",
+    "description": "콘텐츠·소재를 제작하고 집행하며 반응 데이터를 수집합니다."
+  },
+  {
+    "step": 4,
+    "icon": "trending-up",
+    "title": "성과 채널 집중 운영",
+    "description": "성과가 좋은 채널에 예산·노출을 재배분합니다."
+  },
+  {
+    "step": 5,
+    "icon": "clipboard-check",
+    "title": "리포트 및 개선",
+    "description": "정기 리포트를 제공하고 다음 달 전략을 조정합니다."
+  }
+]

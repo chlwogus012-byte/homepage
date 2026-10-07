@@ -1,0 +1,18 @@
+{
+  "slug": "local-business",
+  "title": "생활서비스·소상공인",
+  "icon": "store",
+  "painPoints": [
+    "마케팅 용어가 낯설고 어디서부터 시작해야 할지 모르겠다",
+    "예산이 크지 않아 효율적으로 써야 한다",
+    "플레이스 순위가 매출에 바로 영향을 준다"
+  ],
+  "recommendedServices": ["search", "performance"],
+  "notes": "",
+  "seo": {
+    "title": "소상공인 마케팅 | [회사명]",
+    "description": "소상공인·생활서비스 업종을 위한 맞춤 마케팅 솔루션을 소개합니다."
+  },
+  "order": 4,
+  "visible": true
+}

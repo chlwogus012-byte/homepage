@@ -1,0 +1,124 @@
+{
+  "contact": {
+    "fields": [
+      {
+        "name": "companyName",
+        "type": "text",
+        "label": "업체명(상호)",
+        "required": true,
+        "enabled": true
+      },
+      {
+        "name": "contactName",
+        "type": "text",
+        "label": "담당자명",
+        "required": true,
+        "enabled": true
+      },
+      {
+        "name": "phone",
+        "type": "tel",
+        "label": "연락처",
+        "required": true,
+        "enabled": true
+      },
+      {
+        "name": "industry",
+        "type": "select",
+        "label": "업종",
+        "required": false,
+        "options": ["병·의원", "외식", "인테리어", "소상공인", "기타"],
+        "enabled": true
+      },
+      {
+        "name": "interestedServices",
+        "type": "checkbox-group",
+        "label": "관심 서비스",
+        "required": false,
+        "options": ["블로그", "플레이스", "광고", "바이럴", "홈페이지", "잘 모르겠음"],
+        "enabled": true
+      },
+      {
+        "name": "budget",
+        "type": "select",
+        "label": "월 예상 예산",
+        "required": false,
+        "options": ["~50만", "50~100만", "100~300만", "300만~", "미정"],
+        "enabled": true
+      },
+      {
+        "name": "memo",
+        "type": "textarea",
+        "label": "문의 내용",
+        "required": false,
+        "maxLength": 500,
+        "enabled": true
+      },
+      {
+        "name": "agreePrivacy",
+        "type": "checkbox",
+        "label": "개인정보 수집·이용 동의",
+        "required": true,
+        "enabled": true
+      }
+    ],
+    "successMessage": "상담 신청이 접수되었습니다. 빠르게 연락드리겠습니다.",
+    "privacyText": "[TBD] — content/legal/privacy.md 동의 전문 참고"
+  },
+  "partnership": {
+    "fields": [
+      {
+        "name": "companyName",
+        "type": "text",
+        "label": "회사명",
+        "required": true,
+        "enabled": true
+      },
+      {
+        "name": "contactName",
+        "type": "text",
+        "label": "담당자",
+        "required": true,
+        "enabled": true
+      },
+      {
+        "name": "phone",
+        "type": "tel",
+        "label": "연락처",
+        "required": true,
+        "enabled": true
+      },
+      {
+        "name": "email",
+        "type": "email",
+        "label": "이메일",
+        "required": true,
+        "enabled": true
+      },
+      {
+        "name": "proposalType",
+        "type": "select",
+        "label": "제안 유형",
+        "required": true,
+        "options": ["매체", "협력", "채용", "기타"],
+        "enabled": true
+      },
+      {
+        "name": "memo",
+        "type": "textarea",
+        "label": "제안 내용",
+        "required": true,
+        "enabled": true
+      },
+      {
+        "name": "agreePrivacy",
+        "type": "checkbox",
+        "label": "개인정보 수집·이용 동의",
+        "required": true,
+        "enabled": true
+      }
+    ],
+    "successMessage": "제휴 제안이 접수되었습니다. 확인 후 연락드리겠습니다.",
+    "privacyText": "[TBD] — content/legal/privacy.md 동의 전문 참고"
+  }
+}

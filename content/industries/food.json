@@ -1,0 +1,18 @@
+{
+  "slug": "food",
+  "title": "외식·프랜차이즈",
+  "icon": "utensils",
+  "painPoints": [
+    "플레이스 순위와 리뷰 관리가 매출에 직결되는데 신경 쓸 여력이 없다",
+    "신메뉴·이벤트를 알릴 채널이 마땅치 않다",
+    "가맹점별로 마케팅 톤을 맞추기 어렵다"
+  ],
+  "recommendedServices": ["search", "viral"],
+  "notes": "",
+  "seo": {
+    "title": "외식·프랜차이즈 마케팅 | [회사명]",
+    "description": "외식업·프랜차이즈를 위한 플레이스·바이럴 마케팅 솔루션을 소개합니다."
+  },
+  "order": 2,
+  "visible": true
+}

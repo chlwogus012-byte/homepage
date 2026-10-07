@@ -1,0 +1,34 @@
+[
+  {
+    "key": "projects",
+    "label": "진행 프로젝트",
+    "value": 0,
+    "suffix": "+",
+    "description": "[TBD] — PRD §9 항목 6 결정 전 placeholder",
+    "isPlaceholder": true
+  },
+  {
+    "key": "content-published",
+    "label": "누적 콘텐츠 발행",
+    "value": 0,
+    "suffix": "건",
+    "description": "[TBD]",
+    "isPlaceholder": true
+  },
+  {
+    "key": "renewal-rate",
+    "label": "평균 재계약률",
+    "value": 0,
+    "suffix": "%",
+    "description": "[TBD]",
+    "isPlaceholder": true
+  },
+  {
+    "key": "industries",
+    "label": "주요 업종 수",
+    "value": 0,
+    "suffix": "개",
+    "description": "[TBD]",
+    "isPlaceholder": true
+  }
+]

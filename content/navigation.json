@@ -1,0 +1,51 @@
+[
+  {
+    "label": "회사소개",
+    "href": "/about",
+    "children": [
+      { "label": "About [회사명]", "href": "/about" },
+      { "label": "공식 채널", "href": "[카카오채널_URL]" }
+    ]
+  },
+  {
+    "label": "서비스",
+    "href": "/services/media-mix",
+    "children": [
+      { "label": "미디어믹스(통합 전략)", "href": "/services/media-mix" },
+      { "label": "검색·콘텐츠 마케팅", "href": "/services/search" },
+      { "label": "퍼포먼스 마케팅", "href": "/services/performance" },
+      { "label": "바이럴 마케팅", "href": "/services/viral" },
+      { "label": "브랜드 마케팅", "href": "/services/brand" }
+    ]
+  },
+  {
+    "label": "업종별 솔루션",
+    "href": "/industries",
+    "badge": true,
+    "children": [
+      { "label": "병·의원 / 한의원", "href": "/industries/medical" },
+      { "label": "외식·프랜차이즈", "href": "/industries/food" },
+      { "label": "인테리어·도배·리빙", "href": "/industries/interior" },
+      { "label": "생활서비스·소상공인", "href": "/industries/local-business" },
+      { "label": "기타(전문직·B2B 등)", "href": "/industries/etc" }
+    ]
+  },
+  {
+    "label": "성과·운영",
+    "href": "/cases",
+    "children": [
+      { "label": "성공사례", "href": "/cases" },
+      { "label": "운영 프로세스", "href": "/process" }
+    ]
+  },
+  {
+    "label": "상담",
+    "href": "/contact",
+    "children": [
+      { "label": "상담 접수", "href": "/contact" },
+      { "label": "카톡 상담", "href": "[카카오상담_URL]" },
+      { "label": "제휴 제안", "href": "/partnership" },
+      { "label": "회사소개서 다운로드", "href": "/files/company-profile.pdf" }
+    ]
+  }
+]

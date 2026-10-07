@@ -1,0 +1,99 @@
+{
+  "sections": [
+    {
+      "type": "hero",
+      "visible": true,
+      "order": 1,
+      "data": {
+        "headline": "보여주는 광고가 아닌, 매출이 되는 마케팅",
+        "subcopy": "[회사명]이 업종별 맞춤 전략으로 상담·방문을 만듭니다.",
+        "ctaPrimary": { "label": "무료 상담", "href": "/contact" },
+        "ctaSecondary": { "label": "성공사례 보기", "href": "/cases" }
+      }
+    },
+    {
+      "type": "strengths",
+      "visible": true,
+      "order": 2,
+      "data": {
+        "heading": "왜 [회사명]인가",
+        "points": [
+          { "number": "01", "title": "[TBD]", "description": "[TBD] — PRD §9 항목 2 결정 후 반영" },
+          { "number": "02", "title": "[TBD]", "description": "[TBD]" },
+          { "number": "03", "title": "[TBD]", "description": "[TBD]" },
+          { "number": "04", "title": "[TBD]", "description": "[TBD]" },
+          { "number": "05", "title": "[TBD]", "description": "[TBD]" }
+        ]
+      }
+    },
+    {
+      "type": "gallery",
+      "visible": false,
+      "order": 3,
+      "data": {}
+    },
+    {
+      "type": "services",
+      "visible": true,
+      "order": 4,
+      "data": {
+        "heading": "상품을 소개합니다"
+      }
+    },
+    {
+      "type": "industries",
+      "visible": false,
+      "order": 5,
+      "data": {}
+    },
+    {
+      "type": "channels",
+      "visible": false,
+      "order": 6,
+      "data": {}
+    },
+    {
+      "type": "logos",
+      "visible": false,
+      "order": 7,
+      "data": {}
+    },
+    {
+      "type": "stats",
+      "visible": true,
+      "order": 8,
+      "data": {
+        "heading": "숫자로 보는 [회사명]"
+      }
+    },
+    {
+      "type": "cases",
+      "visible": true,
+      "order": 9,
+      "data": {
+        "heading": "대표 성공사례",
+        "limit": 6
+      }
+    },
+    {
+      "type": "process",
+      "visible": false,
+      "order": 10,
+      "data": {}
+    },
+    {
+      "type": "reviews",
+      "visible": false,
+      "order": 11,
+      "data": {}
+    },
+    {
+      "type": "contact",
+      "visible": true,
+      "order": 12,
+      "data": {
+        "heading": "1분 만에 딱 맞는 마케팅 알아보기"
+      }
+    }
+  ]
+}

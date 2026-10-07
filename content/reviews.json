@@ -1,0 +1,16 @@
+[
+  {
+    "industry": "병·의원",
+    "author": "샘플 후기 (익명)",
+    "body": "이 후기는 실제 고객 후기가 아닌 샘플 텍스트입니다. 실제 후기 수집 후 교체됩니다.",
+    "isSample": true,
+    "visible": true
+  },
+  {
+    "industry": "외식·프랜차이즈",
+    "author": "샘플 후기 (익명)",
+    "body": "이 후기는 실제 고객 후기가 아닌 샘플 텍스트입니다. 실제 후기 수집 후 교체됩니다.",
+    "isSample": true,
+    "visible": true
+  }
+]

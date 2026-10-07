@@ -1,0 +1,17 @@
+{
+  "slug": "etc",
+  "title": "기타(전문직·B2B 등)",
+  "icon": "briefcase",
+  "painPoints": [
+    "업종 특성상 일반적인 광고 소재가 잘 맞지 않는다",
+    "의사결정 단계가 길어 신뢰를 쌓는 콘텐츠가 필요하다"
+  ],
+  "recommendedServices": ["brand", "search"],
+  "notes": "",
+  "seo": {
+    "title": "전문직·B2B 마케팅 | [회사명]",
+    "description": "전문직·B2B 업종을 위한 신뢰 기반 마케팅 솔루션을 소개합니다."
+  },
+  "order": 5,
+  "visible": true
+}

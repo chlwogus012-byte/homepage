@@ -1,0 +1,18 @@
+{
+  "slug": "interior",
+  "title": "인테리어·도배·리빙",
+  "icon": "paint-roller",
+  "painPoints": [
+    "시공 사례(전후 비교)를 보여줄 포트폴리오 채널이 부족하다",
+    "상권 내 경쟁 업체와 비교해 노출이 밀린다",
+    "견적 문의로 이어지는 상담 동선이 약하다"
+  ],
+  "recommendedServices": ["search", "brand"],
+  "notes": "",
+  "seo": {
+    "title": "인테리어·도배 마케팅 | [회사명]",
+    "description": "시공 사례 중심의 인테리어·도배 업종 마케팅 솔루션을 소개합니다."
+  },
+  "order": 3,
+  "visible": true
+}

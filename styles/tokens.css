@@ -1,0 +1,19 @@
+/* 디자인 토큰 — PRD §6.2 기준 (초안값, 최종 브랜드 결정 전까지 placeholder)
+   값을 바꿀 때는 이 파일만 수정하면 전체 반영된다. */
+:root {
+  --background: #0e0e10;
+  --surface: #1a1a1f;
+  --text: #ffffff;
+  --text-muted: #a1a1aa;
+  --primary: #6d5ef8; /* [TBD] 포인트 컬러 — PRD §9-10 결정 전 placeholder */
+  --primary-foreground: #ffffff;
+  --border: #2a2a30;
+
+  --radius-sm: 12px;
+  --radius-lg: 20px;
+
+  --container-max: 1280px;
+
+  --font-kr: "Pretendard", system-ui, -apple-system, "Malgun Gothic", sans-serif;
+  --font-en-label: var(--font-kr); /* [TBD] 영문 라벨용 그로테스크 폰트 — PRD §6.2 미정 */
+}

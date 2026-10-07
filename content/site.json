@@ -1,0 +1,19 @@
+{
+  "companyName": "[회사명]",
+  "companyNameEn": "[COMPANY_NAME_EN]",
+  "slogan": "보여주는 광고가 아닌, 매출이 되는 마케팅",
+  "phone": "[대표번호]",
+  "email": "[이메일]",
+  "address": "[주소]",
+  "businessNumber": "[사업자등록번호]",
+  "ceo": "[대표자명]",
+  "kakaoChannelUrl": "[카카오채널_URL]",
+  "kakaoChatUrl": "[카카오상담_URL]",
+  "instagramUrl": "[인스타그램_URL]",
+  "blogUrl": "[네이버블로그_URL]",
+  "brochurePdf": "/files/company-profile.pdf",
+  "marqueeText": "[COMPANY_NAME_EN]_[대표번호]",
+  "footerNotice": "본 사이트의 콘텐츠를 무단으로 복제·배포하는 것을 금지합니다.",
+  "naverSearchAdvisorVerification": "[TBD]",
+  "googleSearchConsoleVerification": "[TBD]"
+}
