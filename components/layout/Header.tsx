@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/Badge";
 import { NavLink } from "@/components/ui/NavLink";
 import { MegaMenu } from "@/components/layout/MegaMenu";
 import { MobileMenu } from "@/components/layout/MobileMenu";
+import { track } from "@/lib/track";
 
 type HeaderProps = {
   site: Site;
@@ -83,6 +84,7 @@ export function Header({ site, navigation }: HeaderProps) {
         <div className="flex items-center gap-4">
           <a
             href={`tel:${site.phone}`}
+            onClick={() => track("click_phone", { source: "header" })}
             className="hidden text-sm font-semibold text-text md:block"
           >
             {site.phone}

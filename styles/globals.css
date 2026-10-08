@@ -9,6 +9,8 @@
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-border: var(--border);
+  --color-error: var(--error);
+  --color-error-foreground: var(--error-foreground);
   --radius-sm: var(--radius-sm);
   --radius-lg: var(--radius-lg);
   --font-sans: var(--font-kr);

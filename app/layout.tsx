@@ -4,7 +4,8 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingWidget } from "@/components/layout/FloatingWidget";
 import { MobileCtaBar } from "@/components/layout/MobileCtaBar";
-import { getNavigation, getSite } from "@/lib/content";
+import { ContactModalProvider } from "@/components/forms/ContactModalProvider";
+import { getForms, getNavigation, getSite } from "@/lib/content";
 import "@/styles/globals.css";
 
 const pretendard = localFont({
@@ -25,15 +26,18 @@ export function generateMetadata(): Metadata {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   const site = getSite();
   const navigation = getNavigation();
+  const forms = getForms();
 
   return (
     <html lang="ko" className={`${pretendard.variable} h-full antialiased`}>
       <body id="top" className="flex min-h-full flex-col">
-        <Header site={site} navigation={navigation} />
-        <main className="flex flex-1 flex-col pb-14 md:pb-0">{children}</main>
-        <Footer site={site} />
-        <FloatingWidget site={site} />
-        <MobileCtaBar site={site} />
+        <ContactModalProvider formDef={forms.contact}>
+          <Header site={site} navigation={navigation} />
+          <main className="flex flex-1 flex-col pb-14 md:pb-0">{children}</main>
+          <Footer site={site} />
+          <FloatingWidget site={site} />
+          <MobileCtaBar site={site} />
+        </ContactModalProvider>
       </body>
     </html>
   );

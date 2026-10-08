@@ -212,7 +212,7 @@ pnpm typecheck      # tsc --noEmit
 - [x] 프로젝트 초기 세팅 (Next.js 16 App Router + TypeScript + Tailwind v4 + pnpm, `styles/tokens.css` 디자인 토큰, Pretendard 셀프호스팅 폰트, 폴더 구조)
 - [x] 콘텐츠 스키마 + 샘플 데이터 (`lib/schema.ts` zod 스키마, `lib/content.ts` 로더, `/content` 전체 샘플 데이터 — 사례·후기는 `isSample: true`로 명시)
 - [x] 전역 레이아웃 (Header/MegaMenu/MobileMenu/Footer/FloatingWidget/MobileCtaBar — `/contact` 모달·폼은 다음 단계에서 연결)
-- [ ] 상담 폼 + 알림(로컬 스텁) + 트래킹
-- [ ] 메인 P0 섹션
-- [ ] 서비스·사례·프로세스 템플릿
+- [x] 상담 폼 + 알림(로컬 스텁) + 트래킹 (`/contact` 페이지·전역 모달 공용 `ContactForm`, `/api/contact` 허니팟·IP 레이트리밋·마스킹 로그, `lib/track.ts`)
+- [x] 메인 P0 섹션 (Hero/Strengths(Swiper)/ServicesTabs/Stats(카운트업)/FeaturedCases/ContactSection — `home.json` 기반 조립, `lib/schema.ts`에 섹션별 zod 스키마 구체화)
+- [x] 서비스·사례·프로세스 템플릿 (`/services/[slug]`, `/cases`+필터, `/cases/[slug]`, `/process` — `SubHero`/`Breadcrumb`/`Accordion`/`CtaBanner`/`CaseCard` 공용 UI 추가)
 - [ ] QA·SEO 등록 → 오픈

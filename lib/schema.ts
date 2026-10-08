@@ -52,27 +52,71 @@ export const navItemSchema: z.ZodType<NavItem> = z.lazy(() =>
 export const navigationSchema = z.array(navItemSchema);
 
 // ---------- home.json ----------
-// 섹션별 data의 세부 스키마는 섹션 컴포넌트를 만드는 다음 단계에서 구체화한다.
-export const homeSectionTypeSchema = z.enum([
-  "hero",
-  "strengths",
-  "gallery",
-  "services",
-  "industries",
-  "channels",
-  "logos",
-  "stats",
-  "cases",
-  "process",
-  "reviews",
-  "contact",
-]);
-export const homeSectionSchema = z.object({
-  type: homeSectionTypeSchema,
-  visible: z.boolean(),
-  order: z.number(),
-  data: z.record(z.string(), z.unknown()),
+const ctaSchema = z.object({ label: z.string(), href: z.string() });
+const emptySectionDataSchema = z.record(z.string(), z.unknown());
+
+export const heroSectionDataSchema = z.object({
+  headline: z.string(),
+  subcopy: z.string(),
+  ctaPrimary: ctaSchema,
+  ctaSecondary: ctaSchema,
 });
+
+export const strengthPointSchema = z.object({
+  number: z.string(),
+  title: z.string(),
+  description: z.string(),
+});
+export const strengthsSectionDataSchema = z.object({
+  heading: z.string(),
+  points: z.array(strengthPointSchema),
+});
+
+export const servicesSectionDataSchema = z.object({ heading: z.string() });
+export const statsSectionDataSchema = z.object({ heading: z.string() });
+export const casesSectionDataSchema = z.object({ heading: z.string(), limit: z.number() });
+export const contactSectionDataSchema = z.object({ heading: z.string() });
+
+// 아직 전용 섹션 컴포넌트가 없는 타입은 data 형태를 미리 확정하지 않는다.
+function emptySection<T extends string>(type: T) {
+  return z.object({
+    type: z.literal(type),
+    visible: z.boolean(),
+    order: z.number(),
+    data: emptySectionDataSchema,
+  });
+}
+
+export const homeSectionSchema = z.discriminatedUnion("type", [
+  z.object({ type: z.literal("hero"), visible: z.boolean(), order: z.number(), data: heroSectionDataSchema }),
+  z.object({
+    type: z.literal("strengths"),
+    visible: z.boolean(),
+    order: z.number(),
+    data: strengthsSectionDataSchema,
+  }),
+  emptySection("gallery"),
+  z.object({
+    type: z.literal("services"),
+    visible: z.boolean(),
+    order: z.number(),
+    data: servicesSectionDataSchema,
+  }),
+  emptySection("industries"),
+  emptySection("channels"),
+  emptySection("logos"),
+  z.object({ type: z.literal("stats"), visible: z.boolean(), order: z.number(), data: statsSectionDataSchema }),
+  z.object({ type: z.literal("cases"), visible: z.boolean(), order: z.number(), data: casesSectionDataSchema }),
+  emptySection("process"),
+  emptySection("reviews"),
+  z.object({
+    type: z.literal("contact"),
+    visible: z.boolean(),
+    order: z.number(),
+    data: contactSectionDataSchema,
+  }),
+]);
+export type HomeSection = z.infer<typeof homeSectionSchema>;
 export const homeSchema = z.object({
   sections: z.array(homeSectionSchema),
 });
@@ -87,6 +131,7 @@ export const statSchema = z.object({
   // 실제 지표가 아직 확정되지 않은 임시값인 경우 true (PRD §9 항목 6)
   isPlaceholder: z.boolean().optional(),
 });
+export type Stat = z.infer<typeof statSchema>;
 export const statsSchema = z.array(statSchema);
 
 // ---------- content/services/*.json ----------
@@ -210,6 +255,8 @@ export const formDefinitionSchema = z.object({
   successMessage: z.string(),
   privacyText: z.string(),
 });
+export type FormField = z.infer<typeof formFieldSchema>;
+export type FormDefinition = z.infer<typeof formDefinitionSchema>;
 export const formsSchema = z.object({
   contact: formDefinitionSchema,
   partnership: formDefinitionSchema,

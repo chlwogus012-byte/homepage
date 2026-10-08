@@ -4,6 +4,7 @@ import { useState } from "react";
 import type { NavItem, Site } from "@/lib/schema";
 import { Badge } from "@/components/ui/Badge";
 import { NavLink } from "@/components/ui/NavLink";
+import { track } from "@/lib/track";
 
 type MobileMenuProps = {
   site: Site;
@@ -70,6 +71,7 @@ export function MobileMenu({ site, navigation, open, onClose }: MobileMenuProps)
       <div className="grid grid-cols-2 gap-3 border-t border-border p-6">
         <a
           href={`tel:${site.phone}`}
+          onClick={() => track("click_phone", { source: "mobile_menu" })}
           className="flex min-h-11 items-center justify-center rounded-sm border border-border text-sm font-semibold text-text"
         >
           전화 상담
@@ -78,6 +80,7 @@ export function MobileMenu({ site, navigation, open, onClose }: MobileMenuProps)
           href={site.kakaoChatUrl}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => track("click_kakao", { source: "mobile_menu" })}
           className="flex min-h-11 items-center justify-center rounded-sm bg-primary text-sm font-semibold text-primary-foreground"
         >
           카톡 상담

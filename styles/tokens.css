@@ -8,6 +8,8 @@
   --primary: #6d5ef8; /* [TBD] 포인트 컬러 — PRD §9-10 결정 전 placeholder */
   --primary-foreground: #ffffff;
   --border: #2a2a30;
+  --error: #ef4444;
+  --error-foreground: #ffffff;
 
   --radius-sm: 12px;
   --radius-lg: 20px;
