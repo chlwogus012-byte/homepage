@@ -1,6 +1,7 @@
 {
-  "companyName": "[회사명]",
-  "companyNameEn": "[COMPANY_NAME_EN]",
+  "companyName": "더마케팅랩",
+  "companyNameEn": "THE MARKETING LAB",
+  "logoSymbol": { "src": "/images/brand/symbol.png", "alt": "더마케팅랩 심볼" },
   "slogan": "보여주는 광고가 아닌, 매출이 되는 마케팅",
   "phone": "[대표번호]",
   "email": "[이메일]",

@@ -25,6 +25,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
   return {
     title: service.seo.title ?? `${service.title} | ${site.companyName}`,
     description: service.seo.description ?? service.summary,
+    alternates: { canonical: `/services/${service.slug}` },
   };
 }
 
@@ -37,8 +38,28 @@ export default async function ServicePage({ params }: ServicePageProps) {
   const serviceLabels = Object.fromEntries(services.map((item) => [item.slug, item.title]));
   const relatedCases = getCases().filter((caseItem) => caseItem.services.includes(service.slug));
 
+  const faqJsonLd =
+    service.faq.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: service.faq.map((item) => ({
+            "@type": "Question",
+            name: item.question,
+            acceptedAnswer: { "@type": "Answer", text: item.answer },
+          })),
+        }
+      : null;
+
   return (
     <>
+      {faqJsonLd ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      ) : null}
+
       <SubHero
         eyebrow="Service"
         title={service.title}

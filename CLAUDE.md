@@ -27,7 +27,7 @@
 5. **실제 고객사명·성과 수치를 창작하지 않는다.** 샘플 사례가 필요하면 `"샘플 사례 01"`처럼 명확히 샘플임을 표시하고 `isSample: true` 플래그를 단다.
 6. **모바일 퍼스트.** 모든 UI는 모바일(~767px)부터 설계하고 확장한다.
 7. **SSG/SSR 필수.** 네이버 크롤러 대응을 위해 핵심 콘텐츠가 JS 실행 없이 HTML에 포함되어야 한다.
-8. **상담 동선은 어떤 변경에도 깨지면 안 된다.** 헤더 전화번호, 플로팅 위젯, 모바일 하단 CTA 바, 상담 폼은 모든 페이지에서 동작해야 한다.
+8. **상담 동선은 어떤 변경에도 깨지면 안 된다.** 플로팅 위젯, 모바일 하단 CTA 바, 상담 폼은 모든 페이지에서 동작해야 한다. (2026-10-22 결정: 헤더 우측 대표번호 노출은 Jason 요청으로 제거 — 대표번호가 확정되면 플로팅 위젯·모바일 CTA 바·상담 폼에서는 계속 사용 가능)
 
 ---
 
@@ -208,11 +208,13 @@ pnpm typecheck      # tsc --noEmit
 
 - [x] PRD.md v0.1 작성
 - [x] CLAUDE.md 작성 (파일명 오타 `CLADE.md` → `CLAUDE.md` 수정, Next.js 자동생성 `@AGENTS.md` 임포트 병합)
-- [ ] PRD 9장 미결정 사항 확정 (회사명, 포지셔닝, 서비스 라인업 등)
+- [ ] PRD 9장 미결정 사항 확정 (13개 중 9개 결정: #8 콘텐츠관리=옵션A, #9 알림채널=이메일만, #10 디자인무드=다크, #11 영상에셋=보류/미정, #2 포지셔닝=강점 5가지 가안 작성, #3 서비스라인업=기존 5개 확정(가격 비공개), #4 업종메뉴=기존 5개 확정, #5 사례공개범위=샘플 6개로 확충, #6 성과숫자=예시 수치 채움(`isPlaceholder: true` 유지). #2·3·4·6은 Jason 최종 확인 필요한 가안. 나머지 4개 — 회사명·로고, 연락채널, 도메인, 사업자정보 — 대기 중)
 - [x] 프로젝트 초기 세팅 (Next.js 16 App Router + TypeScript + Tailwind v4 + pnpm, `styles/tokens.css` 디자인 토큰, Pretendard 셀프호스팅 폰트, 폴더 구조)
 - [x] 콘텐츠 스키마 + 샘플 데이터 (`lib/schema.ts` zod 스키마, `lib/content.ts` 로더, `/content` 전체 샘플 데이터 — 사례·후기는 `isSample: true`로 명시)
 - [x] 전역 레이아웃 (Header/MegaMenu/MobileMenu/Footer/FloatingWidget/MobileCtaBar — `/contact` 모달·폼은 다음 단계에서 연결)
 - [x] 상담 폼 + 알림(로컬 스텁) + 트래킹 (`/contact` 페이지·전역 모달 공용 `ContactForm`, `/api/contact` 허니팟·IP 레이트리밋·마스킹 로그, `lib/track.ts`)
 - [x] 메인 P0 섹션 (Hero/Strengths(Swiper)/ServicesTabs/Stats(카운트업)/FeaturedCases/ContactSection — `home.json` 기반 조립, `lib/schema.ts`에 섹션별 zod 스키마 구체화)
 - [x] 서비스·사례·프로세스 템플릿 (`/services/[slug]`, `/cases`+필터, `/cases/[slug]`, `/process` — `SubHero`/`Breadcrumb`/`Accordion`/`CtaBanner`/`CaseCard` 공용 UI 추가)
-- [ ] QA·SEO 등록 → 오픈
+- [x] 법적 페이지 + 기본 SEO (`/privacy`, `/terms` — `lib/markdown.ts` 경량 파서 + `MarkdownBody` 공용 UI; `app/sitemap.ts`/`app/robots.ts`; 전 페이지 `alternates.canonical`; 루트 `Organization` JSON-LD, 서비스 `FAQPage`, 사례 `Article` JSON-LD; `lib/seo.ts`의 `NEXT_PUBLIC_SITE_URL`로 `metadataBase` 설정, 미설정 시 `https://example.com` placeholder — `.env.example` 추가)
+- [x] 브랜드명 확정 + 메인 히어로 리디자인 (국문 "더마케팅랩"/영문 "THE MARKETING LAB" `site.json` 반영; 메인 히어로를 타이포 워드마크 + 원형 카피 + CLIENTS 마퀴 구조로 교체 — `heroSectionDataSchema`/`logosSectionDataSchema` 추가, `Hero.tsx`/`Clients.tsx` 신규. 히어로 워드마크는 "THEMARKETINGLAB" 텍스트(Pretendard Black, 레퍼런스풍 굵은 산세리프)로 렌더링. 헤더 로고는 Jason 제공 심볼(`public/images/brand/symbol.png`, `site.json`의 `logoSymbol`) 적용 완료. 원형 카피는 "성공하는 마케팅 법칙을 연구합니다"로 확정. 전 콘텐츠의 `[회사명]` 플레이스홀더 "더마케팅랩"으로 일괄 치환. Framer Motion 추가, 히어로 마운트 인/섹션 스크롤 인뷰 애니메이션(`components/ui/Reveal.tsx`) 적용 — `prefers-reduced-motion` 시 비활성화. CLIENTS는 실제 거래처 로고 미수령으로 `isSample: true` 샘플 플레이스홀더만 노출 중 — 거래처 로고 수령 시 교체 필요)
+- [ ] QA·SEO 등록 → 오픈 (서치어드바이저·서치콘솔 실제 등록, Lighthouse, 전 브라우저 QA는 도메인 확정 후)

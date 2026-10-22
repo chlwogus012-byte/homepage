@@ -8,6 +8,7 @@ export function generateMetadata(): Metadata {
   return {
     title: `상담 신청 | ${site.companyName}`,
     description: `${site.companyName}에 마케팅 상담을 신청하세요.`,
+    alternates: { canonical: "/contact" },
   };
 }
 

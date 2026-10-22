@@ -5,6 +5,10 @@
   --surface: #1a1a1f;
   --text: #ffffff;
   --text-muted: #a1a1aa;
+  /* 블랙&화이트 대비 연출용 — 히어로 등 일부 섹션에서만 사용, 전역 라이트 테마가 아님 */
+  --inverse-background: #ffffff;
+  --inverse-text: #0e0e10;
+  --inverse-text-muted: #52525b;
   --primary: #6d5ef8; /* [TBD] 포인트 컬러 — PRD §9-10 결정 전 placeholder */
   --primary-foreground: #ffffff;
   --border: #2a2a30;

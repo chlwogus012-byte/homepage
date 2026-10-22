@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getCase, getCases, getServices, getSite } from "@/lib/content";
+import { getSiteUrl } from "@/lib/seo";
 import { Container } from "@/components/ui/Container";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { Badge } from "@/components/ui/Badge";
@@ -31,6 +32,7 @@ export async function generateMetadata({ params }: CasePageProps): Promise<Metad
   return {
     title: caseItem.seo?.title ?? `${caseItem.title} | ${site.companyName}`,
     description: caseItem.seo?.description ?? caseItem.challenge,
+    alternates: { canonical: `/cases/${caseItem.slug}` },
   };
 }
 
@@ -52,8 +54,24 @@ export default async function CasePage({ params }: CasePageProps) {
       ? `${caseItem.startDate} ~ 진행중`
       : `${caseItem.startDate} ~ ${caseItem.endDate ?? ""}`;
 
+  const site = getSite();
+  const siteUrl = getSiteUrl();
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: caseItem.title,
+    description: caseItem.seo?.description ?? caseItem.challenge,
+    image: `${siteUrl}${caseItem.thumbnail.src}`,
+    datePublished: caseItem.startDate,
+    author: { "@type": "Organization", name: site.companyName },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <CaseViewTracker slug={caseItem.slug} />
 
       <section className="border-b border-border bg-surface py-12 md:py-16">

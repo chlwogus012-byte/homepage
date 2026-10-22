@@ -2,33 +2,33 @@
   {
     "key": "projects",
     "label": "진행 프로젝트",
-    "value": 0,
+    "value": 86,
     "suffix": "+",
-    "description": "[TBD] — PRD §9 항목 6 결정 전 placeholder",
+    "description": "예시 수치입니다 — 실제 운영 데이터가 확정되면 교체합니다.",
     "isPlaceholder": true
   },
   {
     "key": "content-published",
     "label": "누적 콘텐츠 발행",
-    "value": 0,
+    "value": 2400,
     "suffix": "건",
-    "description": "[TBD]",
+    "description": "예시 수치입니다 — 실제 운영 데이터가 확정되면 교체합니다.",
     "isPlaceholder": true
   },
   {
     "key": "renewal-rate",
     "label": "평균 재계약률",
-    "value": 0,
+    "value": 95,
     "suffix": "%",
-    "description": "[TBD]",
+    "description": "예시 수치입니다 — 실제 운영 데이터가 확정되면 교체합니다.",
     "isPlaceholder": true
   },
   {
     "key": "industries",
     "label": "주요 업종 수",
-    "value": 0,
+    "value": 5,
     "suffix": "개",
-    "description": "[TBD]",
+    "description": "예시 수치입니다 — 실제 운영 데이터가 확정되면 교체합니다.",
     "isPlaceholder": true
   }
 ]

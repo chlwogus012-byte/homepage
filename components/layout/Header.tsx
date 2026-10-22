@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import type { NavItem, Site } from "@/lib/schema";
 import { Container } from "@/components/ui/Container";
@@ -8,7 +9,6 @@ import { Badge } from "@/components/ui/Badge";
 import { NavLink } from "@/components/ui/NavLink";
 import { MegaMenu } from "@/components/layout/MegaMenu";
 import { MobileMenu } from "@/components/layout/MobileMenu";
-import { track } from "@/lib/track";
 
 type HeaderProps = {
   site: Site;
@@ -54,18 +54,29 @@ export function Header({ site, navigation }: HeaderProps) {
       }`}
       onMouseLeave={() => setMegaOpen(false)}
     >
-      <Container className="flex items-center justify-between gap-6">
+      <Container className="grid grid-cols-[1fr_auto_1fr] items-center gap-6">
         <Link
           href="/"
-          className="text-lg font-bold text-text"
+          className="flex items-center text-lg font-bold text-text"
           onClick={() => setMegaOpen(false)}
         >
-          {site.companyName}
+          {site.logoSymbol ? (
+            <Image
+              src={site.logoSymbol.src}
+              alt={site.logoSymbol.alt}
+              width={158}
+              height={57}
+              className="h-6 w-auto"
+              priority
+            />
+          ) : (
+            site.companyName
+          )}
         </Link>
 
         <nav
           aria-label="주 메뉴"
-          className="hidden items-center gap-8 md:flex"
+          className="hidden items-center justify-center gap-8 md:flex"
           onMouseEnter={() => setMegaOpen(true)}
           onFocus={() => setMegaOpen(true)}
         >
@@ -81,14 +92,7 @@ export function Header({ site, navigation }: HeaderProps) {
           ))}
         </nav>
 
-        <div className="flex items-center gap-4">
-          <a
-            href={`tel:${site.phone}`}
-            onClick={() => track("click_phone", { source: "header" })}
-            className="hidden text-sm font-semibold text-text md:block"
-          >
-            {site.phone}
-          </a>
+        <div className="flex items-center justify-end gap-4">
           <button
             type="button"
             aria-label={mobileOpen ? "메뉴 닫기" : "메뉴 열기"}

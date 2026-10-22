@@ -16,6 +16,8 @@ export const imageSchema = z.object({
 export const siteSchema = z.object({
   companyName: z.string(),
   companyNameEn: z.string(),
+  // 헤더 등 좁은 공간에 쓰는 심볼 로고 — 아직 전달받지 못한 동안은 companyName 텍스트로 대체 표시
+  logoSymbol: imageSchema.optional(),
   slogan: z.string(),
   phone: z.string(),
   email: z.string(),
@@ -52,14 +54,11 @@ export const navItemSchema: z.ZodType<NavItem> = z.lazy(() =>
 export const navigationSchema = z.array(navItemSchema);
 
 // ---------- home.json ----------
-const ctaSchema = z.object({ label: z.string(), href: z.string() });
 const emptySectionDataSchema = z.record(z.string(), z.unknown());
 
 export const heroSectionDataSchema = z.object({
-  headline: z.string(),
-  subcopy: z.string(),
-  ctaPrimary: ctaSchema,
-  ctaSecondary: ctaSchema,
+  wordmark: z.string(),
+  circleCopy: z.string(),
 });
 
 export const strengthPointSchema = z.object({
@@ -73,6 +72,19 @@ export const strengthsSectionDataSchema = z.object({
 });
 
 export const servicesSectionDataSchema = z.object({ heading: z.string() });
+
+export const clientLogoSchema = z.object({
+  name: z.string(),
+  logo: imageSchema.optional(),
+  // 실제 거래처 로고가 아직 없는 자리표시용인 경우 true (CLAUDE.md §2-5)
+  isSample: z.boolean().default(false),
+});
+export const logosSectionDataSchema = z.object({
+  heading: z.string(),
+  description: z.string().optional(),
+  clients: z.array(clientLogoSchema),
+});
+
 export const statsSectionDataSchema = z.object({ heading: z.string() });
 export const casesSectionDataSchema = z.object({ heading: z.string(), limit: z.number() });
 export const contactSectionDataSchema = z.object({ heading: z.string() });
@@ -104,7 +116,7 @@ export const homeSectionSchema = z.discriminatedUnion("type", [
   }),
   emptySection("industries"),
   emptySection("channels"),
-  emptySection("logos"),
+  z.object({ type: z.literal("logos"), visible: z.boolean(), order: z.number(), data: logosSectionDataSchema }),
   z.object({ type: z.literal("stats"), visible: z.boolean(), order: z.number(), data: statsSectionDataSchema }),
   z.object({ type: z.literal("cases"), visible: z.boolean(), order: z.number(), data: casesSectionDataSchema }),
   emptySection("process"),

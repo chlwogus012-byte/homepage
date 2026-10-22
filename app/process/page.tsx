@@ -9,6 +9,7 @@ export function generateMetadata(): Metadata {
   return {
     title: `운영 프로세스 | ${site.companyName}`,
     description: `${site.companyName}가 마케팅을 운영하는 방식을 소개합니다.`,
+    alternates: { canonical: "/process" },
   };
 }
 

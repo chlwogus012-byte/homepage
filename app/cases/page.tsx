@@ -9,6 +9,7 @@ export function generateMetadata(): Metadata {
   return {
     title: `성공사례 | ${site.companyName}`,
     description: `${site.companyName}의 업종별 마케팅 성공사례를 확인하세요.`,
+    alternates: { canonical: "/cases" },
   };
 }
 
