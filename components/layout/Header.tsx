@@ -54,7 +54,7 @@ export function Header({ site, navigation }: HeaderProps) {
       }`}
       onMouseLeave={() => setMegaOpen(false)}
     >
-      <Container className="grid grid-cols-[1fr_auto_1fr] items-center gap-6">
+      <Container className="grid grid-cols-[auto_1fr_auto] items-center gap-6 lg:grid-cols-[1fr_auto_1fr]">
         <Link
           href="/"
           className="flex items-center text-lg font-bold text-text"
@@ -76,7 +76,7 @@ export function Header({ site, navigation }: HeaderProps) {
 
         <nav
           aria-label="주 메뉴"
-          className="hidden items-center justify-center gap-8 md:flex"
+          className="hidden items-center justify-end gap-8 md:flex lg:justify-center"
           onMouseEnter={() => setMegaOpen(true)}
           onFocus={() => setMegaOpen(true)}
         >
